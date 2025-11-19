@@ -9,10 +9,13 @@
       border: 1px solid white;
       border-collapse: collapse;
       padding: 5px;
-      background-color: #333;
+      /* Original dark gray background for cells */
+      background-color: #333; 
     }
     th {
+        /* Slightly lighter gray for headers */
         background-color: #555;
+        color: white; /* Ensure header text stands out */
     }
     
     /* Style to make the image fit the ENTIRE width of the page (100%) */
@@ -27,19 +30,40 @@
     section {
         display: block; 
         margin-top: 20px;
+        /* NEW: Light border for sections */
+        border: 1px solid #222; 
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Container for the side-by-side tables */
+    .bottom-table-container {
+        display: flex; 
+        justify-content: space-between; 
+        gap: 20px; 
+        flex-wrap: wrap; 
     }
     
-    /* NEW: Container to hold the last two tables side-by-side */
-    .table-container {
-        display: flex; /* Enables flexbox layout */
-        justify-content: space-between; /* Puts space between the tables */
-        gap: 20px; /* Space between the two items (tables) */
-        flex-wrap: wrap; /* Allows tables to stack on very small screens */
+    .bottom-table-container > div {
+        flex: 1; 
+        min-width: 300px; 
     }
-    
-    .table-container > div {
-        flex: 1; /* Allows each table group to take up equal space */
-        min-width: 300px; /* Ensures tables don't get too squished */
+
+    /* NEW: Dedicated style for the footer */
+    footer {
+        background-color: #1A1A1A; /* Very dark gray */
+        color: #777;
+        padding: 10px;
+        text-align: center;
+        border-top: 2px solid red;
+    }
+
+    /* NEW: Alternating table row colors for better readability */
+    tr:nth-child(even) {
+        background-color: #2A2A2A; /* Slightly lighter row */
+    }
+    tr:nth-child(odd) {
+        background-color: #333; /* Darker row */
     }
   </style>
 </head>
@@ -60,7 +84,7 @@ Location:Kansas City
 <a href="mailTo: ricksapprentice115@gmail.com" target="_blank" style="color: yellow;">ricksapprentice115@gmail.com</a>
 <hr style="border-color: red;">
 
-<section>
+<section style="background-color: #111;"> 
   <h2 style="color: lime;">View Call of Duty League Player Stats (Opens in New Tab)</h2>
   <p>
       The stats page cannot be directly embedded, but you can view it here:
@@ -71,7 +95,7 @@ Location:Kansas City
 </section>
 <hr style="border-color: red;">
 
-<section>
+<section style="background-color: #151515;"> 
 <a href="https://github.com/rigbyjacob41-debug" target="_blank">
 <img 
     src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" 
@@ -121,34 +145,32 @@ Location:Kansas City
 </tr>
 </table>
 
-<div class="table-container">
-    
-    <div>
-        <h2 style="color: lime;">Gamer Statistics</h2>
-        <table>
-            <tr>
-            <th>Statistic</th>
-            <th>Value</th>
-            </tr>
-        <tr>
-            <td>**Overall K/D Ratio**</td>
-            <td>1.85</td>
-            </tr>
-        <tr>
-            <td>**Win/Loss Ratio**</td>
-            <td>1.2</td>
-            </tr>
-        <tr>
-            <td>**Favorite Weapon**</td>
-            <td>AK-74u (Black Ops 2)</td>
-        </tr>
-        <tr>
-            <td>**Prestige Level**</td>
-            <td>Master Prestige</td>
-        </tr>
-        </table>
-    </div>
+<h2 style="color: lime; margin-top: 20px;">Gamer Statistics</h2>
+<table>
+    <tr>
+    <th>Statistic</th>
+    <th>Value</th>
+    </tr>
+<tr>
+    <td>**Overall K/D Ratio**</td>
+    <td>1.85</td>
+    </tr>
+<tr>
+    <td>**Win/Loss Ratio**</td>
+    <td>1.2</td>
+    </tr>
+<tr>
+    <td>**Favorite Weapon**</td>
+    <td>AK-74u (Black Ops 2)</td>
+    </tr>
+<tr>
+    <td>**Prestige Level**</td>
+    <td>Master Prestige</td>
+</tr>
+</table>
 
+<div class="bottom-table-container">
+    
     <div>
         <h2 style="color: lime;">Clan & Team Info</h2>
         <table>
@@ -175,29 +197,37 @@ Location:Kansas City
         </table>
     </div>
 
-</div> <h2 style="color: lime; margin-top: 20px;">Favorite Zombie Maps & Achievements</h2>
-<table>
-    <tr>
-    <th>Map/Achievement</th>
-    <th>Game</th>
-    </tr>
-<tr>
-    <td>**Der Riese**</td>
-    <td>WaW / Black Ops 1</td>
-    </tr>
-<tr>
-    <td>**Kino der Toten**</td>
-    <td>Black Ops 1</td>
-    </tr>
-<tr>
-    <td>**The Giant**</td>
-    <td>Black Ops 3</td>
-</tr>
-<tr>
-    <td>**Moon Easter Egg**</td>
-    <td>Black Ops 1</td>
-</tr>
-</table>
-</section>
+    <div>
+        <h2 style="color: lime;">Favorite Zombie Maps & Achievements</h2>
+        <table>
+            <tr>
+            <th>Map/Achievement</th>
+            <th>Game</th>
+            </tr>
+        <tr>
+            <td>**Der Riese**</td>
+            <td>WaW / Black Ops 1</td>
+            </tr>
+        <tr>
+            <td>**Kino der Toten**</td>
+            <td>Black Ops 1</td>
+            </tr>
+        <tr>
+            <td>**The Giant**</td>
+            <td>Black Ops 3</td>
+        </tr>
+        <tr>
+            <td>**Moon Easter Egg**</td>
+            <td>Black Ops 1</td>
+        </tr>
+        </table>
+    </div>
+
+</div> </section>
+
+<footer>
+    <p>&copy; 2025 Rig-Bot_115 Gaming Page. All Call of Duty content belongs to their respective owners.</p>
+</footer>
+
 </body>
 </html>
