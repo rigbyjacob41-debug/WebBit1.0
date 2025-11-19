@@ -15,25 +15,20 @@
         background-color: #555;
     }
     
-    /* Style for the embedded iframe */
-    .cod-embed {
-      width: 100%;
-      height: 600px;
-      border: 3px solid cyan;
-      background-color: #111;
-    }
+    /* REMOVED: Style for the non-functional embedded iframe */
     
-    /* NEW: General adjustment for section content flow */
-    section {
-        display: block; /* Ensures the section takes up full width and content stacks vertically */
-        margin-top: 20px;
-    }
-    
-    /* Optional: Style to make the image fit better */
-    section img {
-        max-width: 100%;
+    /* NEW: Style to make the image fit the ENTIRE width of the page (100%) */
+    #cod-main-image {
+        width: 100%;
         height: auto;
-        display: block; /* Prevents unwanted space below the image */
+        display: block; 
+        border: 2px solid lime; /* Added a border to highlight the image */
+    }
+    
+    /* General adjustment for section content flow */
+    section {
+        display: block; 
+        margin-top: 20px;
     }
   </style>
 </head>
@@ -55,19 +50,23 @@ Location:Kansas City
 <hr style="border-color: red;">
 
 <section>
-  <h2 style="color: lime;">View Call of Duty League Player Stats</h2>
-  <iframe 
-    src="https://callofdutyleague.com/en-us/stats" 
-    title="Embedded Call of Duty League Player Stats"
-    class="cod-embed" 
-    loading="lazy">
-  </iframe>
+  <h2 style="color: lime;">View Call of Duty League Player Stats (Opens in New Tab)</h2>
+  <p>
+      The stats page cannot be directly embedded, but you can view it here:
+      <a href="https://callofdutyleague.com/en-us/stats" target="_blank" style="color: cyan; font-weight: bold;">
+          Call of Duty League Player Stats
+      </a>
+  </p>
 </section>
 <hr style="border-color: red;">
 
 <section>
 <a href="https://github.com/rigbyjacob41-debug" target="_blank">
-<img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Stand alone COD picture"></a>
+<img 
+    src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" 
+    alt="Stand alone COD picture"
+    id="cod-main-image"
+></a>
 
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 605px; min-width: 325px;" >
   <section style="color: black; background-color: white;">
