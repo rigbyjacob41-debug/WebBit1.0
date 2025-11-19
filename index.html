@@ -4,13 +4,151 @@
   <title>My Personal Call of Duty Webpage</title>
   
   <style>
-    /* ... (CSS remains the same) ... */
+    /* ----------------------------------- */
+    /* GLOBAL & TYPOGRAPHY ADJUSTMENTS */
+    /* ----------------------------------- */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: black;
+        color: white; 
+        margin: 0; 
+        padding: 0 20px 20px 20px;
+    }
+    
+    header {
+        background-color: #444;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        text-shadow: 0 0 10px red, 0 0 20px #FF3000;
+        font-size: 2.5em;
+        transition: color 0.3s;
+    }
+    
+    header h1:hover {
+        color: #FFD700; 
+    }
+
+    h1, h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    section h2 {
+        color: #FFD700; 
+        border-bottom: 2px solid #FF3000; 
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        display: inline-block; 
+    }
+
+    /* ----------------------------------- */
+    /* INTERACTIVE LINKS (BUTTONS) */
+    /* ----------------------------------- */
+    
+    .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #D32F2F; 
+        color: white !important; 
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        border: 2px solid #FF3000;
+    }
+
+    .button-link:hover {
+        background-color: #FF3000;
+        box-shadow: 0 0 15px #FF3000; 
+    }
+
+    .email-button {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #333;
+        color: #FFD700 !important; 
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid #FFD700;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .email-button:hover {
+        background-color: #555;
+        color: white !important;
+        box-shadow: 0 0 5px #FFD700;
+    }
+
+    ul li {
+        color: white; 
+    }
+    
+    ul a {
+        position: relative;
+        text-decoration: none;
+        color: #FFD700; 
+        padding-bottom: 2px;
+    }
+
+    ul a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        left: 0;
+        background: red; 
+        transition: width 0.3s ease;
+    }
+
+    ul a:hover::after {
+        width: 100%;
+    }
+
+
+    /* ----------------------------------- */
+    /* SECTION & TABLE STYLES */
+    /* ----------------------------------- */
+    section {
+        display: block; 
+        margin-top: 20px;
+        border: 2px solid #555;
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: #151515;
+        border-radius: 8px;
+    }
+
+    table {
+        width: 100%;
+        border: 1px solid white;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+    th {
+        background-color: #555;
+        color: white;
+        text-align: left;
+    }
+    tr:nth-child(even) {
+        background-color: #2A2A2A; 
+    }
+    tr:nth-child(odd) {
+        background-color: #333; 
+    }
     
     /* ----------------------------------- */
     /* IMAGE & EMBED STYLES */
     /* ----------------------------------- */
     
-    /* CLEANUP: Removed the conflicting lime border from general img tag */
     img {
         max-width: 100%; 
         height: auto; 
@@ -20,30 +158,84 @@
     .game-image-gallery {
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: center; 
+        justify-content: space-between; /* Adjusted to space evenly */
         gap: 15px; 
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
+    /* ADJUSTMENT: New dimensions for 3 horizontal images */
     .game-image-gallery img {
-        width: 180px; 
-        height: 120px; 
+        width: 30%; /* Three images plus gaps fit nicely */
+        min-width: 150px; /* Ensures they don't get too small on tiny screens */
+        height: 150px; /* Increased height for better visibility */
         object-fit: cover;
-        border: 4px solid #333; /* Muted gray border */
+        border: 4px solid #FFD700; /* Gold border */
         border-radius: 5px;
         transition: transform 0.2s ease-in-out, box-shadow 0.2s, border-color 0.2s; 
     }
 
-    /* POP EFFECT 4: Bolder Image Hover - Now Red/White Focus */
     .game-image-gallery img:hover {
-        transform: scale(1.1); 
-        border-color: red; /* Border turns red on hover */
-        box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing red shadow */
+        transform: scale(1.05); /* Slightly less aggressive zoom since they are larger */
+        border-color: red;
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.5); 
     }
     
-    /* ... (Rest of CSS remains the same) ... */
+    /* Media Embeds */
+    .media-flex-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap; 
+        margin: 20px 0;
+    }
 
+    .media-item {
+        flex: 1 1 45%; 
+        min-width: 320px; 
+        text-align: center;
+    }
+
+    blockquote.tiktok-embed {
+        margin: 10px auto; 
+        max-width: 100%; 
+        border: 3px solid #660000; 
+        border-radius: 8px;
+        overflow: hidden; 
+    }
+
+    .media-item iframe {
+        display: block;
+        width: 100%; 
+        height: 315px; 
+        border: 3px solid red; 
+        border-radius: 8px;
+    }
+    
+    /* Tables */
+    .bottom-table-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; 
+        margin-top: 20px;
+    }
+    
+    .table-column {
+        flex: 1; 
+        min-width: 300px; 
+    }
+
+    /* ----------------------------------- */
+    /* FOOTER STYLES */
+    /* ----------------------------------- */
+    footer {
+        background-color: #1A1A1A; 
+        color: #777;
+        padding: 15px;
+        text-align: center;
+        border-top: 3px double red;
+        font-size: 0.9em; 
+    }
   </style>
 </head>
 <body style="background-color: black; color: white;">
@@ -104,17 +296,12 @@ Location:Kansas City
 <h2 style="color: #FFD700;">🖼️ A Look at Call of Duty Through the Years</h2>
 <div class="game-image-gallery">
     
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Call_of_Duty_World_at_War_cover.png/220px-Call_of_Duty_World_at_War_cover.png" alt="Call of Duty: Black Ops (Original)">
+    <img src="https://i.ebayimg.com/images/g/JkIAAOSwq2Rjo45R/s-l1600.jpg" alt="Call of Duty: Modern Warfare Operator Ghost">
     
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/8d/Call_of_Duty_4_Modern_Warfare_cover.jpg" alt="Call of Duty 4: Modern Warfare">
+    <img src="https://assetsio.gnwcdn.com/warzone-2-battle-royale.jpg?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&meta=sd&sig=1b92c4314be16a9a818c35b3c3c7802b1f868297" alt="Warzone Combat Scene">
     
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f0/Black_Ops_II_cover.png" alt="Black Ops 2">
+    <img src="https://wallpapercave.com/wp/wp6164284.jpg" alt="Call of Duty: Black Ops Key Art">
     
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/87/Call_of_Duty_World_at_War_cover.png" alt="Call of Duty: World at War">
-    
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/fe/Call_of_Duty_Black_Ops_3_cover_art.jpg" alt="Black Ops 3">
-    
-    <img src="https://upload.wikimedia.org/wikipedia/en/5/52/Call_of_Duty_Modern_Warfare_%282019%29_cover_art.jpg" alt="Modern Warfare (2019)">
 </div>
 
 <hr style="border-color: red;">
@@ -221,11 +408,11 @@ Location:Kansas City
         <tr>
             <td>**Longest Teammate**</td>
             <td>"Darth_Reaper"</td>
-        </tr>
+            </tr>
         <tr>
             <td>**Competitive Goal**</td>
             <td>Reach Diamond Rank</td>
-        </tr>
+            </tr>
         </table>
     </div>
 
@@ -247,11 +434,11 @@ Location:Kansas City
         <tr>
             <td>**The Giant**</td>
             <td>Black Ops 3</td>
-        </tr>
+            </tr>
         <tr>
             <td>**Moon Easter Egg**</td>
             <td>Black Ops 1</td>
-        </tr>
+            </tr>
         </table>
     </div>
 
