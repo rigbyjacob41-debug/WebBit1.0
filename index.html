@@ -8,22 +8,21 @@
     /* GLOBAL & TYPOGRAPHY ADJUSTMENTS */
     /* ----------------------------------- */
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, common font */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: black;
         color: orange;
-        margin: 0; /* Remove default body margin */
-        padding: 0 20px 20px 20px; /* Add padding to the sides and bottom */
+        margin: 0;
+        padding: 0 20px 20px 20px;
     }
     
     header {
         background-color: #444;
         color: cyan;
-        padding: 20px; /* Increased padding */
-        text-align: center; /* Center header content */
+        padding: 20px;
+        text-align: center;
         margin-bottom: 20px;
     }
     
-    /* Ensure all main headings are prominent */
     h1, h2 {
         margin-top: 0;
         margin-bottom: 10px;
@@ -38,23 +37,22 @@
         border: 1px solid #222; 
         padding: 15px;
         margin-bottom: 20px;
-        background-color: #151515; /* Uniform section background */
-        border-radius: 8px; /* Slightly rounded corners for sections */
+        background-color: #151515;
+        border-radius: 8px;
     }
 
     table {
-        width: 100%; /* Ensure tables take full available width */
+        width: 100%;
         border: 1px solid white;
         border-collapse: collapse;
         padding: 5px;
-        margin-bottom: 20px; /* Space after each table */
+        margin-bottom: 20px;
     }
     th {
         background-color: #555;
         color: white;
-        text-align: left; /* Align header text to the left */
+        text-align: left;
     }
-    /* Alternating table row colors for better readability */
     tr:nth-child(even) {
         background-color: #2A2A2A; 
     }
@@ -65,12 +63,36 @@
     /* ----------------------------------- */
     /* IMAGE & EMBED STYLES */
     /* ----------------------------------- */
+    /* Adjusted main image size */
     #cod-main-image {
-        width: 100%;
+        max-width: 60%; /* Smaller percentage of its container */
         height: auto;
         display: block; 
-        border: 4px solid red; /* Bold red border for impact */
+        margin: 0 auto 20px auto; /* Center the image */
+        border: 4px solid red;
+    }
+
+    /* NEW: Container for the smaller game images */
+    .game-image-gallery {
+        display: flex; /* Arrange images in a row */
+        flex-wrap: wrap; /* Allow images to wrap to the next line */
+        justify-content: center; /* Center images horizontally */
+        gap: 15px; /* Space between images */
+        margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    .game-image-gallery img {
+        width: 180px; /* Fixed width for each small image */
+        height: 120px; /* Fixed height for consistency */
+        object-fit: cover; /* Ensures images fill the space without distortion */
+        border: 2px solid lime; /* Border for each small image */
+        border-radius: 5px; /* Slightly rounded corners */
+        transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    }
+
+    .game-image-gallery img:hover {
+        transform: scale(1.05); /* Slightly enlarge image on hover */
     }
     
     /* Container for the two final tables to sit side-by-side */
@@ -81,7 +103,6 @@
         margin-top: 20px;
     }
     
-    /* Ensures each column takes up equal space */
     .table-column {
         flex: 1; 
         min-width: 300px; 
@@ -93,10 +114,10 @@
     footer {
         background-color: #1A1A1A; 
         color: #777;
-        padding: 15px; /* Increased padding */
+        padding: 15px;
         text-align: center;
-        border-top: 3px double red; /* Changed to a double border */
-        font-size: 0.9em; /* Slightly smaller text */
+        border-top: 3px double red;
+        font-size: 0.9em; 
     }
   </style>
 </head>
@@ -117,7 +138,28 @@ Location:Kansas City
 <a href="mailTo: ricksapprentice115@gmail.com" target="_blank" style="color: yellow;">ricksapprentice115@gmail.com</a>
 <hr style="border-color: red;">
 
-<section> 
+<section style="background-color: #111;"> 
+  <h2 style="color: lime;">📰 Latest Call of Duty News & Updates</h2>
+  
+  <ul style="color: #FFD700; list-style-type: '⚡ ';">
+      <li>
+          <a href="https://www.callofduty.com/blog/2025/01/new-season-update-details-patch-notes" target="_blank" style="color: cyan;">
+              Season 4 Reloaded Patch Notes Drop: All Weapon Balance Changes
+          </a>
+      </li>
+      <li>
+          <a href="https://www.callofduty.com/blog/2025/01/cod-league-championship-bracket-reveal" target="_blank" style="color: cyan;">
+              CDL Major III Championship Bracket Revealed—Who Will Win?
+          </a>
+      </li>
+      <li>
+          <a href="https://charlieintel.com/new-zombies-mode-leak-confirmed" target="_blank" style="color: cyan;">
+              Massive Leak Confirms Classic Zombies Round-Based Mode Return in Next Title
+          </a>
+      </li>
+  </ul>
+</section>
+<section style="background-color: #111;"> 
   <h2 style="color: lime;">📈 View Call of Duty League Player Stats (Opens in New Tab)</h2>
   <p>
       The stats page cannot be directly embedded due to security, but you can view it here:
@@ -134,6 +176,20 @@ Location:Kansas City
     alt="Stand alone COD picture"
     id="cod-main-image"
 ></a>
+
+<hr style="border-color: red;">
+
+<h2 style="color: lime;">🖼️ A Look at My Favorite Call of Duty Games</h2>
+<div class="game-image-gallery">
+    <img src="https://via.placeholder.com/180x120?text=BlackOps2" alt="Black Ops 2">
+    <img src="https://via.placeholder.com/180x120?text=WaW" alt="World at War">
+    <img src="https://via.placeholder.com/180x120?text=BlackOps3" alt="Black Ops 3">
+    <img src="https://via.placeholder.com/180x120?text=CoD+Classic" alt="Call of Duty Classic">
+    <img src="https://via.placeholder.com/180x120?text=Modern+Warfare" alt="Modern Warfare">
+</div>
+
+<hr style="border-color: red;">
+
 
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 605px; min-width: 325px;" >
   <section style="color: black; background-color: white;">
