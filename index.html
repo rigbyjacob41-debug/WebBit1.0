@@ -15,7 +15,7 @@
     th {
         /* Slightly lighter gray for headers */
         background-color: #555;
-        color: white; /* Ensure header text stands out */
+        color: white; 
     }
     
     /* Style to make the image fit the ENTIRE width of the page (100%) */
@@ -36,34 +36,35 @@
         margin-bottom: 20px;
     }
 
-    /* Container for the side-by-side tables */
+    /* FIX: Container for the two final tables to sit side-by-side */
     .bottom-table-container {
-        display: flex; 
-        justify-content: space-between; 
-        gap: 20px; 
-        flex-wrap: wrap; 
+        display: flex; /* Enables flexbox layout */
+        gap: 20px; /* Space between the two items (tables) */
+        flex-wrap: wrap; /* Allows tables to stack on very small screens */
+        margin-top: 20px; /* Add separation from the table above */
     }
     
-    .bottom-table-container > div {
+    /* Ensures each column takes up equal space */
+    .table-column {
         flex: 1; 
         min-width: 300px; 
     }
 
-    /* NEW: Dedicated style for the footer */
+    /* Alternating table row colors for better readability */
+    tr:nth-child(even) {
+        background-color: #2A2A2A; 
+    }
+    tr:nth-child(odd) {
+        background-color: #333; 
+    }
+    
+    /* Dedicated style for the footer */
     footer {
-        background-color: #1A1A1A; /* Very dark gray */
+        background-color: #1A1A1A; 
         color: #777;
         padding: 10px;
         text-align: center;
         border-top: 2px solid red;
-    }
-
-    /* NEW: Alternating table row colors for better readability */
-    tr:nth-child(even) {
-        background-color: #2A2A2A; /* Slightly lighter row */
-    }
-    tr:nth-child(odd) {
-        background-color: #333; /* Darker row */
     }
   </style>
 </head>
@@ -171,7 +172,7 @@ Location:Kansas City
 
 <div class="bottom-table-container">
     
-    <div>
+    <div class="table-column">
         <h2 style="color: lime;">Clan & Team Info</h2>
         <table>
             <tr>
@@ -197,7 +198,7 @@ Location:Kansas City
         </table>
     </div>
 
-    <div>
+    <div class="table-column">
         <h2 style="color: lime;">Favorite Zombie Maps & Achievements</h2>
         <table>
             <tr>
