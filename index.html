@@ -10,23 +10,113 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: black;
-        color: orange;
+        color: white; /* Main body text color */
         margin: 0; 
         padding: 0 20px 20px 20px;
     }
     
     header {
         background-color: #444;
-        color: cyan;
+        color: white;
         padding: 20px;
         text-align: center;
         margin-bottom: 20px;
     }
     
+    /* POP EFFECT 1: Header Glow - Red/Orange */
+    header h1 {
+        text-shadow: 0 0 10px red, 0 0 20px #FF3000;
+        font-size: 2.5em;
+        transition: color 0.3s;
+    }
+    
+    header h1:hover {
+        color: #FFD700; /* Gold shine on hover */
+    }
+
     h1, h2 {
         margin-top: 0;
         margin-bottom: 10px;
     }
+
+    /* POP EFFECT 2: Underline for Section Headings */
+    section h2 {
+        color: #FFD700; /* Gold Section Titles */
+        border-bottom: 2px solid #FF3000; /* Red underline effect */
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        display: inline-block; 
+    }
+
+    /* ----------------------------------- */
+    /* INTERACTIVE LINKS (BUTTONS) */
+    /* ----------------------------------- */
+    
+    /* Primary Button (Red Accent) */
+    .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #D32F2F; 
+        color: white !important; 
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        border: 2px solid #FF3000;
+    }
+
+    .button-link:hover {
+        background-color: #FF3000;
+        box-shadow: 0 0 15px #FF3000; 
+    }
+
+    /* Secondary Button (Gold Accent) */
+    .email-button {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #333;
+        color: #FFD700 !important; 
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid #FFD700;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .email-button:hover {
+        background-color: #555;
+        color: white !important;
+        box-shadow: 0 0 5px #FFD700;
+    }
+
+    /* POP EFFECT 3: Underline Animation for Navigation Links */
+    ul li {
+        color: white; 
+    }
+    
+    ul a {
+        position: relative;
+        text-decoration: none;
+        color: #FFD700; /* Gold links */
+        padding-bottom: 2px;
+    }
+
+    ul a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        left: 0;
+        background: red; 
+        transition: width 0.3s ease;
+    }
+
+    ul a:hover::after {
+        width: 100%;
+    }
+
 
     /* ----------------------------------- */
     /* SECTION & TABLE STYLES */
@@ -34,7 +124,7 @@
     section {
         display: block; 
         margin-top: 20px;
-        border: 1px solid #222; 
+        border: 2px solid #555;
         padding: 15px;
         margin-bottom: 20px;
         background-color: #151515;
@@ -64,15 +154,13 @@
     /* IMAGE & EMBED STYLES */
     /* ----------------------------------- */
     
-    /* General image styles for responsiveness and default border */
+    /* CLEANUP: Removed the conflicting lime border from general img tag */
     img {
         max-width: 100%; 
         height: auto; 
-        border: 2px solid lime; 
         box-sizing: border-box;
     }
     
-    /* Container for ALL game images */
     .game-image-gallery {
         display: flex; 
         flex-wrap: wrap; 
@@ -82,21 +170,23 @@
         margin-bottom: 20px;
     }
 
-    /* Specific uniform sizing and styling for all gallery images */
     .game-image-gallery img {
         width: 180px; 
         height: 120px; 
         object-fit: cover;
-        border: 4px solid red; /* Applied the stronger red border to all gallery images */
+        border: 4px solid #333; /* Muted gray border */
         border-radius: 5px;
-        transition: transform 0.2s ease-in-out; 
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s, border-color 0.2s; 
     }
 
+    /* POP EFFECT 4: Bolder Image Hover - Now Red/White Focus */
     .game-image-gallery img:hover {
-        transform: scale(1.05); 
+        transform: scale(1.1); 
+        border-color: red; /* Border turns red on hover */
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing red shadow */
     }
     
-    /* Container for the TikTok and YouTube embeds */
+    /* Media Embeds */
     .media-flex-container {
         display: flex;
         justify-content: space-around;
@@ -111,25 +201,25 @@
         text-align: center;
     }
 
-    /* TikTok Embed specific adjustments */
+    /* TikTok Embed - Accentuated with a strong red/dark border */
     blockquote.tiktok-embed {
         margin: 10px auto; 
         max-width: 100%; 
-        border: 2px solid purple;
+        border: 3px solid #660000; 
         border-radius: 8px;
         overflow: hidden; 
     }
 
-    /* YouTube iframe adjustments */
+    /* YouTube iframe - Stronger red border */
     .media-item iframe {
         display: block;
         width: 100%; 
         height: 315px; 
-        border: 2px solid red; 
+        border: 3px solid red; 
         border-radius: 8px;
     }
     
-    /* Container for the two final tables to sit side-by-side */
+    /* Tables */
     .bottom-table-container {
         display: flex;
         gap: 20px;
@@ -155,7 +245,7 @@
     }
   </style>
 </head>
-<body style="background-color: black; color: orange;">
+<body style="background-color: black; color: white;">
 <header>
   <h1>🔫 Calling all Call of Duty Fans!!</h1>
   <p>Viewers Discretion Advised.</p>
@@ -166,28 +256,33 @@ Age:25
 Location:Kansas City
 </pre>
 </header>
-<p>Check out my favorite website: <a href="https://www.callofduty.com/" target="_blank" style="color: yellow;">www.callofduty.com</a>
+<p>
+    Check out my favorite website: 
+    <a href="https://www.callofduty.com/" target="_blank" class="button-link">
+        www.callofduty.com
+    </a>
 </p>
-
-<a href="mailTo: ricksapprentice115@gmail.com" target="_blank" style="color: yellow;">ricksapprentice115@gmail.com</a>
+<a href="mailTo: ricksapprentice115@gmail.com" target="_blank" class="email-button">
+    ricksapprentice115@gmail.com
+</a>
 <hr style="border-color: red;">
 
 <section style="background-color: #111;"> 
-  <h2 style="color: lime;">📰 Latest Call of Duty News & Updates</h2>
+  <h2 style="color: #FFD700;">📰 Latest Call of Duty News & Updates</h2>
   
-  <ul style="color: #FFD700; list-style-type: '⚡ ';">
+  <ul style="list-style-type: '⚡ ';">
       <li>
-          <a href="https://www.callofduty.com/blog/2025/01/new-season-update-details-patch-notes" target="_blank" style="color: cyan;">
+          <a href="https://www.callofduty.com/blog/2025/01/new-season-update-details-patch-notes" target="_blank">
               Season 4 Reloaded Patch Notes Drop: All Weapon Balance Changes
           </a>
       </li>
       <li>
-          <a href="https://www.callofduty.com/blog/2025/01/cod-league-championship-bracket-reveal" target="_blank" style="color: cyan;">
+          <a href="https://www.callofduty.com/blog/2025/01/cod-league-championship-bracket-reveal" target="_blank">
               CDL Major III Championship Bracket Revealed—Who Will Win?
           </a>
       </li>
       <li>
-          <a href="https://charlieintel.com/new-zombies-mode-leak-confirmed" target="_blank" style="color: cyan;">
+          <a href="https://charlieintel.com/new-zombies-mode-leak-confirmed" target="_blank">
               Massive Leak Confirms Classic Zombies Round-Based Mode Return in Next Title
           </a>
       </li>
@@ -195,22 +290,21 @@ Location:Kansas City
 </section>
 
 <section style="background-color: #111;"> 
-  <h2 style="color: lime;">📈 View Call of Duty League Player Stats (Opens in New Tab)</h2>
+  <h2 style="color: #FFD700;">📈 View Call of Duty League Player Stats (Opens in New Tab)</h2>
   <p>
       The stats page cannot be directly embedded due to security, but you can view it here:
-      <a href="https://callofdutyleague.com/en-us/stats" target="_blank" style="color: cyan; font-weight: bold;">
+      <a href="https://callofdutyleague.com/en-us/stats" target="_blank" style="color: white; font-weight: bold;">
           Call of Duty League Player Stats Link
       </a>
   </p>
 </section>
 
 <section> 
-<h2 style="color: lime;">🖼️ A Look at Call of Duty Through the Years</h2>
+<h2 style="color: #FFD700;">🖼️ A Look at Call of Duty Through the Years</h2>
 <div class="game-image-gallery">
     
-    <a href="https://github.com/rigbyjacob41-debug" target="_blank">
-        <img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Call of Duty: Black Ops (Original)">
-    </a>
+    <img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Call of Duty: Black Ops (Original)">
+    
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Call_of_Duty_4_Modern_Warfare_cover.jpg/220px-Call_of_Duty_4_Modern_Warfare_cover.jpg" alt="Call of Duty 4: Modern Warfare">
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Black_Ops_II_cover.png/220px-Black_Ops_II_cover.png" alt="Black Ops 2">
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Call_of_Duty_World_at_War_cover.png/220px-Call_of_Duty_World_at_War_cover.png" alt="Call of Duty: World at War">
@@ -223,7 +317,7 @@ Location:Kansas City
 <div class="media-flex-container">
 
     <div class="media-item">
-        <h3 style="color: cyan;">Iconic TikTok Moment</h3>
+        <h3>Iconic TikTok Moment</h3>
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984">
             <section style="color: black; background-color: white;">
                 <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking23</a>
@@ -235,7 +329,7 @@ Location:Kansas City
     </div>
 
     <div class="media-item">
-        <h3 style="color: cyan;">"The Coldest Moment in Call of Duty"</h3>
+        <h3>"The Coldest Moment in Call of Duty"</h3>
         <iframe width="100%" height="315" 
                 src="https://www.youtube.com/embed/rvGCRkIP6hI" 
                 title="The Coldest Moment in Call of Duty 🥶 | COD Ghosts"
@@ -248,11 +342,11 @@ Location:Kansas City
 </div>
 <hr style="border-color: red;">
 
-<h2 style="color: lime;">🎮 My Fav COD Games</h2>
-<h2 style="color: lime;">Fav in-game modes</h2>
+<h2 style="color: #FFD700;">🎮 My Fav COD Games</h2>
+<h2 style="color: #FFD700;">Fav in-game modes</h2>
 
 
-<ul style="color: lightblue;">
+<ul style="color: white;">
     <li>Black Ops 2, one in the chamber</li>
     <li>WaW 1, standard zombies</li>
     <li>Black Ops 3, battle royale</li>
@@ -278,7 +372,7 @@ Location:Kansas City
 </tr>
 </table>
 
-<h2 style="color: lime;">📊 Gamer Statistics</h2>
+<h2 style="color: #FFD700;">📊 Gamer Statistics</h2>
 <table>
     <tr>
     <th>Statistic</th>
@@ -305,7 +399,7 @@ Location:Kansas City
 <div class="bottom-table-container">
     
     <div class="table-column">
-        <h2 style="color: lime;">🤝 Clan & Team Info</h2>
+        <h2 style="color: #FFD700;">🤝 Clan & Team Info</h2>
         <table>
             <tr>
             <th>Category</th>
@@ -331,7 +425,7 @@ Location:Kansas City
     </div>
 
     <div class="table-column">
-        <h2 style="color: lime;">🧟 Favorite Zombie Maps & Achievements</h2>
+        <h2 style="color: #FFD700;">🧟 Favorite Zombie Maps & Achievements</h2>
         <table>
             <tr>
             <th>Map/Achievement</th>
