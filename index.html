@@ -4,52 +4,56 @@
   <title>My Personal Call of Duty Webpage</title>
   
   <style>
-    /* Existing Styles */
-    table, th, td {
-      border: 1px solid white;
-      border-collapse: collapse;
-      padding: 5px;
-      /* Original dark gray background for cells */
-      background-color: #333; 
-    }
-    th {
-        /* Slightly lighter gray for headers */
-        background-color: #555;
-        color: white; 
+    /* ----------------------------------- */
+    /* GLOBAL & TYPOGRAPHY ADJUSTMENTS */
+    /* ----------------------------------- */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, common font */
+        background-color: black;
+        color: orange;
+        margin: 0; /* Remove default body margin */
+        padding: 0 20px 20px 20px; /* Add padding to the sides and bottom */
     }
     
-    /* Style to make the image fit the ENTIRE width of the page (100%) */
-    #cod-main-image {
-        width: 100%;
-        height: auto;
-        display: block; 
-        border: 2px solid lime;
+    header {
+        background-color: #444;
+        color: cyan;
+        padding: 20px; /* Increased padding */
+        text-align: center; /* Center header content */
+        margin-bottom: 20px;
     }
     
-    /* General adjustment for section content flow */
+    /* Ensure all main headings are prominent */
+    h1, h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    /* ----------------------------------- */
+    /* SECTION & TABLE STYLES */
+    /* ----------------------------------- */
     section {
         display: block; 
         margin-top: 20px;
-        /* NEW: Light border for sections */
         border: 1px solid #222; 
         padding: 15px;
         margin-bottom: 20px;
+        background-color: #151515; /* Uniform section background */
+        border-radius: 8px; /* Slightly rounded corners for sections */
     }
 
-    /* FIX: Container for the two final tables to sit side-by-side */
-    .bottom-table-container {
-        display: flex; /* Enables flexbox layout */
-        gap: 20px; /* Space between the two items (tables) */
-        flex-wrap: wrap; /* Allows tables to stack on very small screens */
-        margin-top: 20px; /* Add separation from the table above */
+    table {
+        width: 100%; /* Ensure tables take full available width */
+        border: 1px solid white;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-bottom: 20px; /* Space after each table */
     }
-    
-    /* Ensures each column takes up equal space */
-    .table-column {
-        flex: 1; 
-        min-width: 300px; 
+    th {
+        background-color: #555;
+        color: white;
+        text-align: left; /* Align header text to the left */
     }
-
     /* Alternating table row colors for better readability */
     tr:nth-child(even) {
         background-color: #2A2A2A; 
@@ -58,19 +62,47 @@
         background-color: #333; 
     }
     
-    /* Dedicated style for the footer */
+    /* ----------------------------------- */
+    /* IMAGE & EMBED STYLES */
+    /* ----------------------------------- */
+    #cod-main-image {
+        width: 100%;
+        height: auto;
+        display: block; 
+        border: 4px solid red; /* Bold red border for impact */
+        margin-bottom: 20px;
+    }
+    
+    /* Container for the two final tables to sit side-by-side */
+    .bottom-table-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; 
+        margin-top: 20px;
+    }
+    
+    /* Ensures each column takes up equal space */
+    .table-column {
+        flex: 1; 
+        min-width: 300px; 
+    }
+
+    /* ----------------------------------- */
+    /* FOOTER STYLES */
+    /* ----------------------------------- */
     footer {
         background-color: #1A1A1A; 
         color: #777;
-        padding: 10px;
+        padding: 15px; /* Increased padding */
         text-align: center;
-        border-top: 2px solid red;
+        border-top: 3px double red; /* Changed to a double border */
+        font-size: 0.9em; /* Slightly smaller text */
     }
   </style>
 </head>
 <body style="background-color: black; color: orange;">
-<header style="background-color: #444; color: cyan; padding: 10px;">
-  <h1>Calling all Call of Duty Fans!!</h1>
+<header>
+  <h1>🔫 Calling all Call of Duty Fans!!</h1>
   <p>Viewers Discretion Advised.</p>
 
 <pre>
@@ -85,18 +117,17 @@ Location:Kansas City
 <a href="mailTo: ricksapprentice115@gmail.com" target="_blank" style="color: yellow;">ricksapprentice115@gmail.com</a>
 <hr style="border-color: red;">
 
-<section style="background-color: #111;"> 
-  <h2 style="color: lime;">View Call of Duty League Player Stats (Opens in New Tab)</h2>
+<section> 
+  <h2 style="color: lime;">📈 View Call of Duty League Player Stats (Opens in New Tab)</h2>
   <p>
-      The stats page cannot be directly embedded, but you can view it here:
+      The stats page cannot be directly embedded due to security, but you can view it here:
       <a href="https://callofdutyleague.com/en-us/stats" target="_blank" style="color: cyan; font-weight: bold;">
-          Call of Duty League Player Stats
+          Call of Duty League Player Stats Link
       </a>
   </p>
 </section>
-<hr style="border-color: red;">
 
-<section style="background-color: #151515;"> 
+<section> 
 <a href="https://github.com/rigbyjacob41-debug" target="_blank">
 <img 
     src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" 
@@ -116,7 +147,7 @@ Location:Kansas City
 
 <hr style="border-color: red;">
 
-<h2 style="color: lime;">My Fav COD Games</h2>
+<h2 style="color: lime;">🎮 My Fav COD Games</h2>
 <h2 style="color: lime;">Fav in-game modes</h2>
 
 
@@ -146,7 +177,7 @@ Location:Kansas City
 </tr>
 </table>
 
-<h2 style="color: lime; margin-top: 20px;">Gamer Statistics</h2>
+<h2 style="color: lime;">📊 Gamer Statistics</h2>
 <table>
     <tr>
     <th>Statistic</th>
@@ -173,7 +204,7 @@ Location:Kansas City
 <div class="bottom-table-container">
     
     <div class="table-column">
-        <h2 style="color: lime;">Clan & Team Info</h2>
+        <h2 style="color: lime;">🤝 Clan & Team Info</h2>
         <table>
             <tr>
             <th>Category</th>
@@ -199,7 +230,7 @@ Location:Kansas City
     </div>
 
     <div class="table-column">
-        <h2 style="color: lime;">Favorite Zombie Maps & Achievements</h2>
+        <h2 style="color: lime;">🧟 Favorite Zombie Maps & Achievements</h2>
         <table>
             <tr>
             <th>Map/Achievement</th>
@@ -227,7 +258,7 @@ Location:Kansas City
 </div> </section>
 
 <footer>
-    <p>&copy; 2025 Rig-Bot_115 Gaming Page. All Call of Duty content belongs to their respective owners.</p>
+    <p>&copy; 2025 Rig-Bot_115 Gaming Page. All Call of Duty content belongs to their respective owners. | Page Designed in HTML/CSS.</p>
 </footer>
 
 </body>
