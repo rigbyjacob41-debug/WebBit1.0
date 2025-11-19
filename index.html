@@ -28,6 +28,19 @@
         display: block; 
         margin-top: 20px;
     }
+    
+    /* NEW: Container to hold the last two tables side-by-side */
+    .table-container {
+        display: flex; /* Enables flexbox layout */
+        justify-content: space-between; /* Puts space between the tables */
+        gap: 20px; /* Space between the two items (tables) */
+        flex-wrap: wrap; /* Allows tables to stack on very small screens */
+    }
+    
+    .table-container > div {
+        flex: 1; /* Allows each table group to take up equal space */
+        min-width: 300px; /* Ensures tables don't get too squished */
+    }
   </style>
 </head>
 <body style="background-color: black; color: orange;">
@@ -68,7 +81,7 @@ Location:Kansas City
 
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 605px; min-width: 325px;" >
   <section style="color: black; background-color: white;">
-    <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking123</a>
+    <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking23</a>
     <p>... Original video content would appear here ...</p>
     <a target="_blank" title="♬ Original sound - NostalgiaKing" href="https://www.tiktok.com/music/Original-sound-7418271707524021025?refer=embed">♬ Original sound - NostalgiaKing</a>
   </section>
@@ -108,31 +121,61 @@ Location:Kansas City
 </tr>
 </table>
 
-<h2 style="color: lime; margin-top: 20px;">Gamer Statistics</h2>
-<table>
-    <tr>
-    <th>Statistic</th>
-    <th>Value</th>
-    </tr>
-<tr>
-    <td>**Overall K/D Ratio**</td>
-    <td>1.85</td>
-    </tr>
-<tr>
-    <td>**Win/Loss Ratio**</td>
-    <td>1.2</td>
-    </tr>
-<tr>
-    <td>**Favorite Weapon**</td>
-    <td>AK-74u (Black Ops 2)</td>
-</tr>
-<tr>
-    <td>**Prestige Level**</td>
-    <td>Master Prestige</td>
-</tr>
-</table>
+<div class="table-container">
+    
+    <div>
+        <h2 style="color: lime;">Gamer Statistics</h2>
+        <table>
+            <tr>
+            <th>Statistic</th>
+            <th>Value</th>
+            </tr>
+        <tr>
+            <td>**Overall K/D Ratio**</td>
+            <td>1.85</td>
+            </tr>
+        <tr>
+            <td>**Win/Loss Ratio**</td>
+            <td>1.2</td>
+            </tr>
+        <tr>
+            <td>**Favorite Weapon**</td>
+            <td>AK-74u (Black Ops 2)</td>
+        </tr>
+        <tr>
+            <td>**Prestige Level**</td>
+            <td>Master Prestige</td>
+        </tr>
+        </table>
+    </div>
 
-<h2 style="color: lime; margin-top: 20px;">Favorite Zombie Maps & Achievements</h2>
+    <div>
+        <h2 style="color: lime;">Clan & Team Info</h2>
+        <table>
+            <tr>
+            <th>Category</th>
+            <th>Detail</th>
+            </tr>
+        <tr>
+            <td>**Current Clan Tag**</td>
+            <td>[R1G]</td>
+            </tr>
+        <tr>
+            <td>**Preferred Role**</td>
+            <td>Slayer/Objective</td>
+            </tr>
+        <tr>
+            <td>**Longest Teammate**</td>
+            <td>"Darth_Reaper"</td>
+        </tr>
+        <tr>
+            <td>**Competitive Goal**</td>
+            <td>Reach Diamond Rank</td>
+        </tr>
+        </table>
+    </div>
+
+</div> <h2 style="color: lime; margin-top: 20px;">Favorite Zombie Maps & Achievements</h2>
 <table>
     <tr>
     <th>Map/Achievement</th>
