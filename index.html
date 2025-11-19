@@ -1,22 +1,3 @@
-Okay, I understand. You want the main image (#cod-main-image) to integrate into the gallery-style presentation by being the same size as the other five images. This will create a very cohesive and uniform look for all your game-related visuals.
-
-To achieve this, I will:
-
-Remove unique styling for #cod-main-image's size and margin.
-
-Move the #cod-main-image into the .game-image-gallery container.
-
-Ensure all six images conform to the 180px width and 120px height of the gallery images.
-
-Update the content and alt text for each image to be specific to the game it represents.
-
-This means we'll now have a single gallery of six equally sized images, including the one that was previously larger.
-
-Here's the updated code:
-
-📸 Updated Code: All Images Uniform Size in Gallery
-HTML
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -82,31 +63,29 @@ HTML
     /* ----------------------------------- */
     /* IMAGE & EMBED STYLES */
     /* ----------------------------------- */
-    /* Removed specific #cod-main-image sizing, now it will be styled by .game-image-gallery img */
-
-    /* NEW: General image styling (will be overridden by gallery specifics for the small images) */
+    
     img {
-        max-width: 100%; /* Ensures all images are responsive */
-        height: auto; /* Maintain aspect ratio */
-        border: 2px solid lime; /* Default lime border for all images */
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        max-width: 100%; 
+        height: auto; 
+        border: 2px solid lime; 
+        box-sizing: border-box;
     }
     
     /* Container for ALL game images */
     .game-image-gallery {
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: center; /* Center images horizontally */
-        gap: 15px; /* Space between images */
+        justify-content: center; 
+        gap: 15px; 
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
     .game-image-gallery img {
-        width: 180px; /* Fixed width for each small image */
-        height: 120px; /* Fixed height for consistency */
-        object-fit: cover; /* Ensures images fill the space without distortion */
-        border-radius: 5px; /* Slightly rounded corners */
+        width: 180px; 
+        height: 120px; 
+        object-fit: cover;
+        border-radius: 5px;
         transition: transform 0.2s ease-in-out; 
     }
 
@@ -114,15 +93,37 @@ HTML
         transform: scale(1.05); 
     }
     
+    /* NEW: Container for the TikTok and YouTube embeds */
+    .media-flex-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap; 
+        margin: 20px 0;
+    }
+
+    .media-item {
+        flex: 1 1 45%; /* Each item takes up about 45% of the row */
+        min-width: 320px; /* Minimum width before wrapping */
+        text-align: center;
+    }
+
     /* TikTok Embed specific adjustments */
     blockquote.tiktok-embed {
-        margin: 20px auto; 
-        max-width: 605px; 
+        margin: 10px auto; /* Centered margin within its container */
+        max-width: 100%; /* Fill its container */
         border: 2px solid purple;
         border-radius: 8px;
         overflow: hidden; 
     }
 
+    /* YouTube iframe adjustments */
+    .media-item iframe {
+        display: block;
+        border: 2px solid red; /* Border for the YouTube player */
+        border-radius: 8px;
+    }
+    
     /* Container for the two final tables to sit side-by-side */
     .bottom-table-container {
         display: flex;
@@ -201,6 +202,7 @@ Location:Kansas City
 <section> 
 <h2 style="color: lime;">🖼️ A Look at Call of Duty Through the Years</h2>
 <div class="game-image-gallery">
+    
     <a href="https://github.com/rigbyjacob41-debug" target="_blank">
         <img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Call of Duty: Black Ops (Original)">
     </a>
@@ -213,17 +215,32 @@ Location:Kansas City
 
 <hr style="border-color: red;">
 
+<div class="media-flex-container">
 
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 605px; min-width: 325px;" >
-  <section style="color: black; background-color: white;">
-    <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking23</a>
-    <p>... Original video content would appear here ...</p>
-    <a target="_blank" title="♬ Original sound - NostalgiaKing" href="https://www.tiktok.com/music/Original-sound-7418271707524021025?refer=embed">♬ Original sound - NostalgiaKing</a>
-  </section>
-</blockquote>
-<script async src="https://www.tiktok.com/embed.js"></script>
+    <div class="media-item">
+        <h3 style="color: cyan;">Iconic TikTok Moment</h3>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 100%; min-width: 325px;" >
+            <section style="color: black; background-color: white;">
+                <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking23</a>
+                <p>... Original video content would appear here ...</p>
+                <a target="_blank" title="♬ Original sound - NostalgiaKing" href="https://www.tiktok.com/music/Original-sound-7418271707524021025?refer=embed">♬ Original sound - NostalgiaKing</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
 
+    <div class="media-item">
+        <h3 style="color: cyan;">"The Coldest Moment in Call of Duty"</h3>
+        <iframe width="100%" height="315" 
+                src="https://www.youtube.com/embed/rvGCRkIP6hI" 
+                title="The Coldest Moment in Call of Duty 🥶 | COD Ghosts"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
 
+</div>
 <hr style="border-color: red;">
 
 <h2 style="color: lime;">🎮 My Fav COD Games</h2>
