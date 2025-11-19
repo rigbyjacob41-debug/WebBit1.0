@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
-<HTML>
-<HEAD>
-  <title>My Personal Webpage</title>
+<html>
+<head>
+  <title>My Personal Call of Duty Webpage</title>
   
   <style>
+    /* Existing Styles */
     table, th, td {
       border: 1px solid white;
       border-collapse: collapse;
@@ -14,8 +15,16 @@
     th {
         background-color: #555; /* Slightly lighter gray for headers */
     }
+    
+    /* NEW: Style for the embedded iframe */
+    .cod-embed {
+      width: 100%; /* Make the frame span the full width of its container */
+      height: 600px; /* Give it a good viewing height */
+      border: 3px solid cyan; /* Add a border to highlight the frame */
+      background-color: #111; /* Dark background inside the frame */
+    }
   </style>
-</HEAD>
+</head>
 <body style="background-color: black; color: orange;">
 <header style="background-color: #444; color: cyan; padding: 10px;">
   <h1>Calling all Call of Duty Fans!!</h1>
@@ -27,18 +36,28 @@ Age:25
 Location:Kansas City
 </pre>
 </header>
-<p>Check out my favorite website:<a href="https://www.callofduty.com/" target="_blank" style="color: yellow;">www.callofduty.com</a>
+<p>Check out my favorite website: <a href="https://www.callofduty.com/" target="_blank" style="color: yellow;">www.callofduty.com</a>
 </p>
 
 <a href="mailTo: ricksapprentice115@gmail.com" target="_blank" style="color: yellow;">ricksapprentice115@gmail.com</a>
+<hr style="border-color: red;">
+
+<section>
+  <h2 style="color: lime;">Explore the Call of Duty Fandom Wiki</h2>
+  <iframe 
+    src="https://callofduty.fandom.com/" 
+    title="Embedded Call of Duty Wiki"
+    class="cod-embed" 
+    loading="lazy">
+  </iframe>
+</section>
 <hr style="border-color: red;">
 <section>
 <a href="https://github.com/rigbyjacob41-debug" target="_blank">
 <img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Stand alone COD picture"></a>
 
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nostalgiaking123/video/7418271707070237984" data-video-id="7418271707070237984" style="max-width: 605px; min-width: 325px;" >
-  <section style="color: black; background-color: white;"> <!-- TikTok embed uses its own colors, setting these might not work well -->
-    <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking123</a>
+  <section style="color: black; background-color: white;"> <a target="_blank" title="@nostalgiaking23" href="https://www.tiktok.com/@nostalgiaking123?refer=embed">@nostalgiaking123</a>
     <p>... Original video content would appear here ...</p>
     <a target="_blank" title="♬ Original sound - NostalgiaKing" href="https://www.tiktok.com/music/Original-sound-7418271707524021025?refer=embed">♬ Original sound - NostalgiaKing</a>
   </section>
@@ -79,4 +98,4 @@ Location:Kansas City
 </table>
 </section>
 </body>
-</HTML>
+</html>
