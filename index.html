@@ -5,6 +5,15 @@
   
   <style>
     /* ----------------------------------- */
+    /* KEYFRAMES FOR ANIMATIONS */
+    /* ----------------------------------- */
+    @keyframes pulse-glow {
+        0% { text-shadow: 0 0 10px red, 0 0 20px #FF3000; }
+        50% { text-shadow: 0 0 15px #FFD700, 0 0 25px red; }
+        100% { text-shadow: 0 0 10px red, 0 0 20px #FF3000; }
+    }
+
+    /* ----------------------------------- */
     /* GLOBAL & TYPOGRAPHY ADJUSTMENTS */
     /* ----------------------------------- */
     body {
@@ -13,6 +22,14 @@
         color: white; 
         margin: 0; 
         padding: 0 20px 20px 20px;
+        
+        /* DESIGN: Subtle Background Pattern (Hex Grid) */
+        background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        
+        /* DESIGN: Custom Cursor */
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="0" x2="16" y2="10" stroke="red" stroke-width="2"/><line x1="16" y1="22" x2="16" y2="32" stroke="red" stroke-width="2"/><line x1="0" y1="16" x2="10" y2="16" stroke="red" stroke-width="2"/><line x1="22" y1="16" x2="32" y2="16" stroke="red" stroke-width="2"/></svg>'), auto;
     }
     
     header {
@@ -23,10 +40,12 @@
         margin-bottom: 20px;
     }
     
+    /* DESIGN: Pulsing Glow Animation */
     header h1 {
         text-shadow: 0 0 10px red, 0 0 20px #FF3000;
         font-size: 2.5em;
         transition: color 0.3s;
+        animation: pulse-glow 2s infinite alternate; 
     }
     
     header h1:hover {
@@ -44,6 +63,37 @@
         padding-bottom: 5px;
         margin-bottom: 15px;
         display: inline-block; 
+    }
+
+    /* DESIGN: Gamer-Tag Hover (Tooltip) */
+    .gamer-tag-container {
+        position: relative;
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .gamer-tag-container::after {
+        content: "STATUS: ONLINE - MASTER PRESTIGE"; /* Tooltip Text */
+        position: absolute;
+        bottom: 100%; 
+        left: 50%;
+        transform: translateX(-50%);
+        visibility: hidden;
+        background-color: #FFD700; /* Gold background */
+        color: black;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 0.8em;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+        pointer-events: none;
+    }
+    
+    .gamer-tag-container:hover::after {
+        visibility: visible;
+        opacity: 1;
     }
 
     /* ----------------------------------- */
@@ -222,6 +272,31 @@
     }
 
     /* ----------------------------------- */
+    /* CUSTOM PROGRESS BAR STYLES */
+    /* ----------------------------------- */
+    .progress-bar-container {
+        background-color: #333;
+        border: 1px solid #FFD700;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+        height: 25px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        width: 85%; /* Current Goal: 85% Complete */
+        background-color: #D32F2F; /* Red fill */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        transition: width 1s ease-in-out;
+    }
+
+    /* ----------------------------------- */
     /* FOOTER STYLES */
     /* ----------------------------------- */
     footer {
@@ -239,12 +314,13 @@
   <h1>🔫 Calling all Call of Duty Fans!!</h1>
   <p>Viewers Discretion Advised.</p>
 
-<pre>
+<pre class="gamer-tag-container">
 Gammer-Tag:Rig-Bot_115
 Age:25
 Location:Kansas City
 </pre>
 </header>
+
 <p>
     Check out my favorite website: 
     <a href="https://www.callofduty.com/" target="_blank" class="button-link">
@@ -255,6 +331,22 @@ Location:Kansas City
     ricksapprentice115@gmail.com
 </a>
 <hr style="border-color: red;">
+
+---
+
+<section style="background-color: #111;"> 
+  <h2 style="color: #FFD700;">🗣️ Iconic Tactical Intel</h2>
+  <blockquote style="border-left: 5px solid #FFD700; padding-left: 15px; margin: 15px 0; color: #aaa;">
+    "The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth. But I think that's a luxury, not a curse. To know you're close to the end is a kind of freedom. Good time to reflect." 
+    <cite style="display: block; margin-top: 10px; font-style: italic; color: #D32F2F;">— Captain Price, Modern Warfare 2</cite>
+  </blockquote>
+  <blockquote style="border-left: 5px solid #FFD700; padding-left: 15px; margin: 15px 0; color: #aaa;">
+    "You can't kill the past, but you can sure kill the future." 
+    <cite style="display: block; margin-top: 10px; font-style: italic; color: #D32F2F;">— Viktor Reznov, Black Ops</cite>
+  </blockquote>
+</section>
+
+---
 
 <section style="background-color: #111;"> 
   <h2 style="color: #FFD700;">📰 Latest Call of Duty News & Updates</h2>
@@ -278,15 +370,7 @@ Location:Kansas City
   </ul>
 </section>
 
-<section style="background-color: #111;"> 
-  <h2 style="color: #FFD700;">📈 View Call of Duty League Player Stats (Opens in New Tab)</h2>
-  <p>
-      The stats page cannot be directly embedded due to security, but you can view it here:
-      <a href="https://callofdutyleague.com/en-us/stats" target="_blank" style="color: white; font-weight: bold;">
-          Call of Duty League Player Stats Link
-      </a>
-  </p>
-</section>
+---
 
 <section> 
 <h2 style="color: #FFD700;">🖼️ A Look at Call of Duty Through the Years</h2>
@@ -295,8 +379,20 @@ Location:Kansas City
     <img src="https://wallpapers.com/images/high/call-of-duty-modern-warfare-ii-artwork-0i046p1e411b4tgb.webp" alt="Call of Duty Collage Wallpaper">
     
 </div>
+</section>
 
-<hr style="border-color: red;">
+---
+
+<section>
+  <h2 style="color: #FFD700;">🎯 Competitive Goals: Road to Iridescent Rank</h2>
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill">
+      85% Complete
+    </div>
+  </div>
+</section>
+
+---
 
 <div class="media-flex-container">
 
@@ -324,66 +420,82 @@ Location:Kansas City
     </div>
 
 </div>
-<hr style="border-color: red;">
 
-<h2 style="color: #FFD700;">🎮 My Fav COD Games</h2>
-<h2 style="color: #FFD700;">Fav in-game modes</h2>
+---
 
-
-<ul style="color: white;">
-    <li>Black Ops 2, one in the chamber</li>
-    <li>WaW 1, standard zombies</li>
-    <li>Black Ops 3, battle royale</li>
-</ul>
-
-
+<section> 
+<h2 style="color: #FFD700;">📝 Custom Loadout: AK-74u Slayer</h2>
 <table>
     <tr>
-    <th>Fav COD Games</th>
-    <th>Years played</th>
+        <th>Category</th>
+        <th>Detail</th>
     </tr>
-<tr>
-    <td>Black Ops 2</td>
-    <td>12+ years</td>
-    </tr>
-<tr>
-    <td>WaW 1</td>
-    <td>6+ years</td>
-    </tr>
-<tr>
-    <td>Black Ops 3</td>
-    <td>1+ years</td>
-</tr>
-</table>
-
-<h2 style="color: #FFD700;">📊 Gamer Statistics</h2>
-<table>
     <tr>
-    <th>Statistic</th>
-    <th>Value</th>
+        <td>**Primary Weapon**</td>
+        <td>AK-74u (Black Ops 2)</td>
     </tr>
-<tr>
-    <td>**Overall K/D Ratio**</td>
-    <td>1.85</td>
+    <tr>
+        <td>**Muzzle**</td>
+        <td>Monolithic Suppressor</td>
     </tr>
-<tr>
-    <td>**Win/Loss Ratio**</td>
-    <td>1.2</td>
+    <tr>
+        <td>**Laser**</td>
+        <td>5mW Laser</td>
     </tr>
-<tr>
-    <td>**Favorite Weapon**</td>
-    <td>AK-74u (Black Ops 2)</td>
+    <tr>
+        <td>**Magazine**</td>
+        <td>45 Round Mag</td>
     </tr>
-<tr>
-    <td>**Prestige Level**</td>
-    <td>Master Prestige</td>
-</tr>
+    <tr>
+        <td>**Perk Package**</td>
+        <td>Ghost, Cold-Blooded, Fast Hands, Quick Fix</td>
+    </tr>
+    <tr>
+        <td>**Lethal**</td>
+        <td>Semtex</td>
+    </tr>
+    <tr>
+        <td>**Tactical**</td>
+        <td>Flash Grenade</td>
+    </tr>
 </table>
+</section>
+
+---
+
+<section> 
+<h2 style="color: #FFD700;">📊 Gamer Statistics & Favorites</h2>
 
 <div class="bottom-table-container">
     
     <div class="table-column">
-        <h2 style="color: #FFD700;">🤝 Clan & Team Info</h2>
+        <h2 style="color: #FFD700;">Stats & Ratio</h2>
+        <table>
+            <tr>
+            <th>Statistic</th>
+            <th>Value</th>
+            </tr>
+        <tr>
+            <td>**Overall K/D Ratio**</td>
+            <td>1.85</td>
+            </tr>
+        <tr>
+            <td>**Win/Loss Ratio**</td>
+            <td>1.2</td>
+            </tr>
+        <tr>
+            <td>**Favorite Weapon**</td>
+            <td>AK-74u (Black Ops 2)</td>
+            </tr>
+        <tr>
+            <td>**Prestige Level**</td>
+            <td>Master Prestige</td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="table-column">
+        <h2 style="color: #FFD700;">Clan & Team Info</h2>
         <table>
             <tr>
             <th>Category</th>
@@ -408,8 +520,9 @@ Location:Kansas City
         </table>
     </div>
 
-    <div class="table-column">
-        <h2 style="color: #FFD700;">🧟 Favorite Zombie Maps & Achievements</h2>
+</div> 
+
+<h2 style="color: #FFD700;">🧟 Favorite Zombie Maps & Achievements</h2>
         <table>
             <tr>
             <th>Map/Achievement</th>
@@ -432,10 +545,10 @@ Location:Kansas City
             <td>Black Ops 1</td>
             </tr>
         </table>
-    </div>
 
-</div> 
 </section>
+
+---
 
 <footer>
     <p>&copy; 2025 Rig-Bot_115 Gaming Page. All Call of Duty content belongs to their respective owners. | Page Designed in HTML/CSS.</p>
