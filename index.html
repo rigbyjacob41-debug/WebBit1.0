@@ -24,32 +24,25 @@
         margin: 0; 
         padding: 0 20px 20px 20px;
         
-        /* NEW: Split Background Images */
-        background-image: 
-            url('https://wallpapers.com/images/high/call-of-duty-modern-warfare-ii-artwork-0i046p1e411b4tgb.webp'), /* Top image (MW) */
-            url('https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true'); /* Bottom image (BO) */
-        
-        background-position: 
-            center top,   
-            center bottom; 
-            
-        background-size: 
-            100% 50%,     
-            100% 50%;     
-            
-        background-repeat: no-repeat; 
-        background-attachment: fixed; 
+        /* FINAL UPDATE: Only use the CoD Black Ops collage image for the full background */
+        background-image: url('https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true');
+        background-size: cover; /* Ensures it covers the entire page */
+        background-position: center center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repetition */
+        background-attachment: fixed; /* Keeps it fixed when scrolling */
 
-        /* DESIGN: Custom Cursor (Kept as requested) */
+        /* DESIGN: Custom Cursor (Unchanged) */
         cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="0" x2="16" y2="10" stroke="red" stroke-width="2"/><line x1="16" y1="22" x2="16" y2="32" stroke="red" stroke-width="2"/><line x1="0" y1="16" x2="10" y2="16" stroke="red" stroke-width="2"/><line x1="22" y1="16" x2="32" y2="16" stroke="red" stroke-width="2"/></svg>'), auto;
     }
     
     header {
-        background-color: #444; 
+        /* UPDATED: Background is now transparent */
+        background-color: transparent; 
         color: white;
         padding: 20px;
         text-align: center;
         margin-bottom: 20px;
+        border-bottom: 3px solid red; 
     }
     
     /* DESIGN: Pulsing Glow Animation */
@@ -116,9 +109,9 @@
         opacity: 1;
     }
     
-    /* NEW: Style for the separate location link (NOW A BOX/BUTTON) */
+    /* UPDATED: Style for the separate location link (Apex Button) */
     .location-link {
-        display: inline-block; /* Make it fit the content */
+        display: inline-block; 
         padding: 8px 20px;
         background-color: #333; /* Dark background */
         color: #FFD700; /* Gold text */
@@ -131,10 +124,9 @@
         margin-bottom: 20px;
         transition: background-color 0.2s, box-shadow 0.2s;
         
-        /* --- CALIGARI / STYLED FONT ADDITIONS --- */
+        /* CALIGARI / STYLIZED FONT */
         font-family: 'Cinzel', serif; 
         font-size: 1.1em;
-        /* -------------------------------------- */
     }
     .location-link:hover {
         background-color: #555;
