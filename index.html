@@ -114,6 +114,22 @@
         visibility: visible;
         opacity: 1;
     }
+    
+    /* NEW: Style for the separate location link */
+    .location-link {
+        display: block;
+        text-align: center;
+        margin-top: -10px; /* Pull it closer to the PRE block */
+        margin-bottom: 20px;
+        color: #FFD700; /* Gold/Yellow color */
+        text-decoration: none;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+    }
+    .location-link:hover {
+        color: white;
+        text-shadow: 0 0 8px #FFD700;
+    }
 
     /* ----------------------------------- */
     /* INTERACTIVE LINKS (BUTTONS) */
@@ -301,6 +317,8 @@ Location:Kansas City
 </pre>
 </header>
 
+<a href="test.html" class="location-link">View Local Info (test.html)</a>
+
 <p>
     Check out my favorite website: 
     <a href="https://www.callofduty.com/" target="_blank" class="button-link">
@@ -358,6 +376,7 @@ Location:Kansas City
 </section>
 
 <hr style="border-color: red;"> 
+
 <div class="media-flex-container">
 
     <div class="media-item">
