@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>My Personal Call of Duty Webpage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
     /* ----------------------------------- */
@@ -115,20 +116,30 @@
         opacity: 1;
     }
     
-    /* NEW: Style for the separate location link */
+    /* NEW: Style for the separate location link (NOW A BOX/BUTTON) */
     .location-link {
-        display: block;
-        text-align: center;
-        margin-top: -10px; /* Pull it closer to the PRE block */
-        margin-bottom: 20px;
-        color: #FFD700; /* Gold/Yellow color */
+        display: inline-block; /* Make it fit the content */
+        padding: 8px 20px;
+        background-color: #333; /* Dark background */
+        color: #FFD700; /* Gold text */
         text-decoration: none;
         font-weight: bold;
-        text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+        border-radius: 5px;
+        border: 2px solid #FFD700; /* Gold border */
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Subtle gold glow */
+        margin-top: 10px; 
+        margin-bottom: 20px;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        
+        /* --- CALIGARI / STYLED FONT ADDITIONS --- */
+        font-family: 'Cinzel', serif; 
+        font-size: 1.1em;
+        /* -------------------------------------- */
     }
     .location-link:hover {
+        background-color: #555;
+        box-shadow: 0 0 15px #FFD700;
         color: white;
-        text-shadow: 0 0 8px #FFD700;
     }
 
     /* ----------------------------------- */
@@ -317,7 +328,9 @@ Location:Kansas City
 </pre>
 </header>
 
-<a href="test.html" class="location-link">View Local Info (test.html)</a>
+<p style="text-align: center;"> 
+    <a href="test.html" class="location-link">CHECK OUT MY APEX PAGE</a>
+</p>
 
 <p>
     Check out my favorite website: 
