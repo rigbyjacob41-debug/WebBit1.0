@@ -1,20 +1,3 @@
-Okay, that's a great idea to make the image section really stand out and unify the visual theme! A single, large collage wallpaper will give it a powerful, immersive feel.
-
-I will make the following changes:
-
-HTML: Remove the three individual <img> tags within the .game-image-gallery and replace them with a single <img> tag pointing to a Call of Duty collage.
-
-CSS:
-
-Adjust the .game-image-gallery img styles to ensure the single image takes up the full width, is responsive, and maintains a good aspect ratio.
-
-Remove the hover effects that were designed for multiple smaller images, as they won't look as good on a single large image. The border will remain a clean gold.
-
-Here's the updated code with a single, responsive collage wallpaper:
-
-🖼️ Code Update: Single Call of Duty Collage Wallpaper
-HTML
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -173,22 +156,20 @@ HTML
     }
     
     .game-image-gallery {
-        display: flex; /* Kept flex for centering if needed, but not for spacing multiple items */
+        display: flex; 
         justify-content: center;
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
-    /* ADJUSTMENT: Styles for the single collage image */
     .game-image-gallery img {
-        width: 100%; /* Make the single image fill the container */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 400px; /* Optional: Set a max height to prevent it from being too tall */
-        object-fit: cover; /* Ensures image covers the area, cropping if necessary */
-        border: 4px solid #FFD700; /* Gold border */
-        border-radius: 8px; /* Slightly larger border-radius for the larger image */
-        /* Removed hover effects as they are less suitable for a large background image */
-        transition: border-color 0.2s, box-shadow 0.2s; /* Keep subtle hover for border/shadow */
+        width: 100%; 
+        height: auto; 
+        max-height: 400px; 
+        object-fit: cover; 
+        border: 4px solid #FFD700; 
+        border-radius: 8px; 
+        transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .game-image-gallery img:hover {
@@ -445,11 +426,11 @@ Location:Kansas City
         <tr>
             <td>**The Giant**</td>
             <td>Black Ops 3</td>
-        </tr>
+            </tr>
         <tr>
             <td>**Moon Easter Egg**</td>
             <td>Black Ops 1</td>
-        </tr>
+            </tr>
         </table>
     </div>
 
