@@ -9,7 +9,7 @@
     /* ----------------------------------- */
     @keyframes pulse-glow {
         0% { text-shadow: 0 0 10px red, 0 0 20px #FF3000; }
-        50% { text-shadow: 0 0 15px #FFD700, 0 0 25px red; }
+        50% { text-shadow: 0 0 15px #00FF00, 0 0 25px red; /* OPTIC GREEN GLOW */ } 
         100% { text-shadow: 0 0 10px red, 0 0 20px #FF3000; }
     }
 
@@ -18,17 +18,17 @@
     /* ----------------------------------- */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: black;
-        color: white; 
+        background-color: black; /* Main background color set here */
+        color: white; /* Main text color set here */
         margin: 0; 
         padding: 0 20px 20px 20px;
         
-        /* DESIGN: Subtle Background Pattern (Hex Grid) */
-        background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
-        background-size: 20px 20px;
+        /* DESIGN: Subtle Background Pattern (Digital Camo) */
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%230F0F0F" width="200" height="200"/><rect fill="%231A1A1A" x="0" y="0" width="100" height="100"/><rect fill="%231A1A1A" x="100" y="100" width="100" height="100"/><rect fill="%23222222" x="25" y="25" width="50" height="50"/><rect fill="%23222222" x="125" y="125" width="50" height="50"/><rect fill="%23222222" x="75" y="125" width="50" height="50"/><rect fill="%23222222" x="125" y="25" width="50" height="50"/></svg>');
+        background-size: 100px 100px; /* Make pattern smaller for subtlety */
+        background-attachment: fixed; /* Keep pattern fixed while scrolling */
         
-        /* DESIGN: Custom Cursor */
+        /* DESIGN: Custom Cursor (Kept as requested) */
         cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="0" x2="16" y2="10" stroke="red" stroke-width="2"/><line x1="16" y1="22" x2="16" y2="32" stroke="red" stroke-width="2"/><line x1="0" y1="16" x2="10" y2="16" stroke="red" stroke-width="2"/><line x1="22" y1="16" x2="32" y2="16" stroke="red" stroke-width="2"/></svg>'), auto;
     }
     
@@ -58,7 +58,7 @@
     }
 
     section h2 {
-        color: #FFD700; 
+        color: #00FF00; /* Optic Green for section titles */
         border-bottom: 2px solid #FF3000; 
         padding-bottom: 5px;
         margin-bottom: 15px;
@@ -74,13 +74,13 @@
     }
     
     .gamer-tag-container::after {
-        content: "STATUS: ONLINE - MASTER PRESTIGE"; /* Tooltip Text */
+        content: "STATUS: TARGET ACQUIRED - MASTER PRESTIGE"; /* Sniper-specific tooltip */
         position: absolute;
         bottom: 100%; 
         left: 50%;
         transform: translateX(-50%);
         visibility: hidden;
-        background-color: #FFD700; /* Gold background */
+        background-color: #00FF00; /* Optic green background */
         color: black;
         padding: 5px 10px;
         border-radius: 3px;
@@ -122,17 +122,17 @@
         display: inline-block;
         padding: 8px 15px;
         background-color: #333;
-        color: #FFD700 !important; 
+        color: #00FF00 !important; /* Optic Green for email */
         text-decoration: none;
         border-radius: 5px;
-        border: 1px solid #FFD700;
+        border: 1px solid #00FF00; /* Optic Green border */
         transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     }
 
     .email-button:hover {
         background-color: #555;
         color: white !important;
-        box-shadow: 0 0 5px #FFD700;
+        box-shadow: 0 0 5px #00FF00; /* Optic Green shadow */
     }
 
     ul li {
@@ -142,7 +142,7 @@
     ul a {
         position: relative;
         text-decoration: none;
-        color: #FFD700; 
+        color: #00FF00; /* Optic Green for list links */
         padding-bottom: 2px;
     }
 
@@ -217,7 +217,7 @@
         height: auto; 
         max-height: 400px; 
         object-fit: cover; 
-        border: 4px solid #FFD700; 
+        border: 4px solid #00FF00; /* Optic Green border for image */
         border-radius: 8px; 
         transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -276,7 +276,7 @@
     /* ----------------------------------- */
     .progress-bar-container {
         background-color: #333;
-        border: 1px solid #FFD700;
+        border: 1px solid #00FF00; /* Optic green border */
         border-radius: 5px;
         margin-top: 10px;
         overflow: hidden;
@@ -286,8 +286,8 @@
 
     .progress-bar-fill {
         height: 100%;
-        width: 85%; /* Current Goal: 85% Complete */
-        background-color: #D32F2F; /* Red fill */
+        width: 85%; 
+        background-color: #008000; /* Darker green fill */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -309,13 +309,13 @@
     }
   </style>
 </head>
-<body style="background-color: black; color: white;">
+<body>
 <header>
   <h1>🔫 Calling all Call of Duty Fans!!</h1>
   <p>Viewers Discretion Advised.</p>
 
 <pre class="gamer-tag-container">
-Gammer-Tag:Rig-Bot_115
+Gammer-Tag:sniper_opps123
 Age:25
 Location:Kansas City
 </pre>
@@ -335,21 +335,19 @@ Location:Kansas City
 ---
 
 <section style="background-color: #111;"> 
-  <h2 style="color: #FFD700;">🗣️ Iconic Tactical Intel</h2>
-  <blockquote style="border-left: 5px solid #FFD700; padding-left: 15px; margin: 15px 0; color: #aaa;">
+  <h2 style="color: #00FF00;">🗣️ Iconic Tactical Intel</h2>
+  <blockquote style="border-left: 5px solid #00FF00; padding-left: 15px; margin: 15px 0; color: #aaa;">
     "The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth. But I think that's a luxury, not a curse. To know you're close to the end is a kind of freedom. Good time to reflect." 
     <cite style="display: block; margin-top: 10px; font-style: italic; color: #D32F2F;">— Captain Price, Modern Warfare 2</cite>
   </blockquote>
-  <blockquote style="border-left: 5px solid #FFD700; padding-left: 15px; margin: 15px 0; color: #aaa;">
-    "You can't kill the past, but you can sure kill the future." 
-    <cite style="display: block; margin-top: 10px; font-style: italic; color: #D32F2F;">— Viktor Reznov, Black Ops</cite>
+  <blockquote style="border-left: 5px solid #00FF00; padding-left: 15px; margin: 15px 0; color: #aaa;">
+    "I'm a ghost, but I'll make sure they remember me." 
+    <cite style="display: block; margin-top: 10px; font-style: italic; color: #D32F2F;">— Ghost, Modern Warfare 2</cite>
   </blockquote>
 </section>
 
----
-
 <section style="background-color: #111;"> 
-  <h2 style="color: #FFD700;">📰 Latest Call of Duty News & Updates</h2>
+  <h2 style="color: #00FF00;">📰 Latest Call of Duty News & Updates</h2>
   
   <ul style="list-style-type: '⚡ ';">
       <li>
@@ -370,10 +368,8 @@ Location:Kansas City
   </ul>
 </section>
 
----
-
 <section> 
-<h2 style="color: #FFD700;">🖼️ A Look at Call of Duty Through the Years</h2>
+<h2 style="color: #00FF00;">🖼️ A Look at Call of Duty Through the Years</h2>
 <div class="game-image-gallery">
     
     <img src="https://wallpapers.com/images/high/call-of-duty-modern-warfare-ii-artwork-0i046p1e411b4tgb.webp" alt="Call of Duty Collage Wallpaper">
@@ -381,10 +377,8 @@ Location:Kansas City
 </div>
 </section>
 
----
-
 <section>
-  <h2 style="color: #FFD700;">🎯 Competitive Goals: Road to Iridescent Rank</h2>
+  <h2 style="color: #00FF00;">🎯 Competitive Goals: Road to Iridescent Rank</h2>
   <div class="progress-bar-container">
     <div class="progress-bar-fill">
       85% Complete
@@ -424,7 +418,7 @@ Location:Kansas City
 ---
 
 <section> 
-<h2 style="color: #FFD700;">📝 Custom Loadout: AK-74u Slayer</h2>
+<h2 style="color: #00FF00;">📝 Custom Loadout: AX-50 Sniper Loadout</h2>
 <table>
     <tr>
         <th>Category</th>
@@ -432,31 +426,31 @@ Location:Kansas City
     </tr>
     <tr>
         <td>**Primary Weapon**</td>
-        <td>AK-74u (Black Ops 2)</td>
+        <td>AX-50 (Modern Warfare 2019)</td>
     </tr>
     <tr>
         <td>**Muzzle**</td>
         <td>Monolithic Suppressor</td>
     </tr>
     <tr>
-        <td>**Laser**</td>
-        <td>5mW Laser</td>
+        <td>**Barrel**</td>
+        <td>32.0" Factory Barrel</td>
     </tr>
     <tr>
-        <td>**Magazine**</td>
-        <td>45 Round Mag</td>
+        <td>**Stock**</td>
+        <td>Singuard Arms Assassin</td>
     </tr>
     <tr>
         <td>**Perk Package**</td>
-        <td>Ghost, Cold-Blooded, Fast Hands, Quick Fix</td>
+        <td>Overkill, Ghost, Tune Up, Amped</td>
     </tr>
     <tr>
         <td>**Lethal**</td>
-        <td>Semtex</td>
+        <td>Claymore</td>
     </tr>
     <tr>
         <td>**Tactical**</td>
-        <td>Flash Grenade</td>
+        <td>Smoke Grenade</td>
     </tr>
 </table>
 </section>
@@ -464,12 +458,12 @@ Location:Kansas City
 ---
 
 <section> 
-<h2 style="color: #FFD700;">📊 Gamer Statistics & Favorites</h2>
+<h2 style="color: #00FF00;">📊 Gamer Statistics & Favorites</h2>
 
 <div class="bottom-table-container">
     
     <div class="table-column">
-        <h2 style="color: #FFD700;">Stats & Ratio</h2>
+        <h2 style="color: #00FF00;">Stats & Ratio</h2>
         <table>
             <tr>
             <th>Statistic</th>
@@ -477,7 +471,7 @@ Location:Kansas City
             </tr>
         <tr>
             <td>**Overall K/D Ratio**</td>
-            <td>1.85</td>
+            <td>2.5</td>
             </tr>
         <tr>
             <td>**Win/Loss Ratio**</td>
@@ -485,7 +479,7 @@ Location:Kansas City
             </tr>
         <tr>
             <td>**Favorite Weapon**</td>
-            <td>AK-74u (Black Ops 2)</td>
+            <td>AX-50 (Modern Warfare 2019)</td>
             </tr>
         <tr>
             <td>**Prestige Level**</td>
@@ -495,7 +489,7 @@ Location:Kansas City
     </div>
 
     <div class="table-column">
-        <h2 style="color: #FFD700;">Clan & Team Info</h2>
+        <h2 style="color: #00FF00;">Clan & Team Info</h2>
         <table>
             <tr>
             <th>Category</th>
@@ -507,22 +501,22 @@ Location:Kansas City
             </tr>
         <tr>
             <td>**Preferred Role**</td>
-            <td>Slayer/Objective</td>
+            <td>Marksman/Slayer</td>
             </tr>
         <tr>
             <td>**Longest Teammate**</td>
-            <td>"Darth_Reaper"</td>
-        </tr>
+            <td>"High_Ground"</td>
+            </tr>
         <tr>
             <td>**Competitive Goal**</td>
             <td>Reach Diamond Rank</td>
-        </tr>
+            </tr>
         </table>
     </div>
 
 </div> 
 
-<h2 style="color: #FFD700;">🧟 Favorite Zombie Maps & Achievements</h2>
+<h2 style="color: #00FF00;">🧟 Favorite Zombie Maps & Achievements</h2>
         <table>
             <tr>
             <th>Map/Achievement</th>
@@ -548,10 +542,8 @@ Location:Kansas City
 
 </section>
 
----
-
 <footer>
-    <p>&copy; 2025 Rig-Bot_115 Gaming Page. All Call of Duty content belongs to their respective owners. | Page Designed in HTML/CSS.</p>
+    <p>&copy; 2025 sniper\_opps123 Gaming Page. All Call of Duty content belongs to their respective owners. | Page Designed in HTML/CSS.</p>
 </footer>
 
 </body>
