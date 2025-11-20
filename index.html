@@ -18,22 +18,33 @@
     /* ----------------------------------- */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: black; /* Main background color set here */
-        color: white; /* Main text color set here */
+        background-color: black; 
+        color: white; 
         margin: 0; 
         padding: 0 20px 20px 20px;
         
-        /* DESIGN: Subtle Background Pattern (Digital Camo) */
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%230F0F0F" width="200" height="200"/><rect fill="%231A1A1A" x="0" y="0" width="100" height="100"/><rect fill="%231A1A1A" x="100" y="100" width="100" height="100"/><rect fill="%23222222" x="25" y="25" width="50" height="50"/><rect fill="%23222222" x="125" y="125" width="50" height="50"/><rect fill="%23222222" x="75" y="125" width="50" height="50"/><rect fill="%23222222" x="125" y="25" width="50" height="50"/></svg>');
-        background-size: 100px 100px; /* Make pattern smaller for subtlety */
-        background-attachment: fixed; /* Keep pattern fixed while scrolling */
+        /* NEW: Split Background Images */
+        background-image: 
+            url('https://wallpapers.com/images/high/call-of-duty-modern-warfare-ii-artwork-0i046p1e411b4tgb.webp'), /* Top image (MW) */
+            url('https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true'); /* Bottom image (BO) */
         
+        background-position: 
+            center top,   
+            center bottom; 
+            
+        background-size: 
+            100% 50%,     
+            100% 50%;     
+            
+        background-repeat: no-repeat; 
+        background-attachment: fixed; 
+
         /* DESIGN: Custom Cursor (Kept as requested) */
         cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="0" x2="16" y2="10" stroke="red" stroke-width="2"/><line x1="16" y1="22" x2="16" y2="32" stroke="red" stroke-width="2"/><line x1="0" y1="16" x2="10" y2="16" stroke="red" stroke-width="2"/><line x1="22" y1="16" x2="32" y2="16" stroke="red" stroke-width="2"/></svg>'), auto;
     }
     
     header {
-        background-color: #444;
+        background-color: #444; 
         color: white;
         padding: 20px;
         text-align: center;
@@ -55,6 +66,14 @@
     h1, h2 {
         margin-top: 0;
         margin-bottom: 10px;
+    }
+
+    section { /* Added background-color to sections for text readability over busy background */
+        background-color: rgba(21, 21, 21, 0.9); /* Slightly transparent dark background */
+        border: 2px solid #555;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
     }
 
     section h2 {
@@ -164,18 +183,8 @@
 
 
     /* ----------------------------------- */
-    /* SECTION & TABLE STYLES */
+    /* TABLE STYLES */
     /* ----------------------------------- */
-    section {
-        display: block; 
-        margin-top: 20px;
-        border: 2px solid #555;
-        padding: 15px;
-        margin-bottom: 20px;
-        background-color: #151515;
-        border-radius: 8px;
-    }
-
     table {
         width: 100%;
         border: 1px solid white;
@@ -196,38 +205,9 @@
     }
     
     /* ----------------------------------- */
-    /* IMAGE & EMBED STYLES */
+    /* MEDIA EMBED STYLES */
     /* ----------------------------------- */
     
-    img {
-        max-width: 100%; 
-        height: auto; 
-        box-sizing: border-box;
-    }
-    
-    .game-image-gallery {
-        display: flex; 
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .game-image-gallery img {
-        width: 100%; 
-        height: auto; 
-        max-height: 400px; 
-        object-fit: cover; 
-        border: 4px solid #00FF00; /* Optic Green border for image */
-        border-radius: 8px; 
-        transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .game-image-gallery img:hover {
-        border-color: red;
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-    }
-    
-    /* Media Embeds */
     .media-flex-container {
         display: flex;
         justify-content: space-around;
@@ -334,7 +314,7 @@ Location:Kansas City
 
 ---
 
-<section style="background-color: #111;"> 
+<section> 
   <h2 style="color: #00FF00;">🗣️ Iconic Tactical Intel</h2>
   <blockquote style="border-left: 5px solid #00FF00; padding-left: 15px; margin: 15px 0; color: #aaa;">
     "The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth. But I think that's a luxury, not a curse. To know you're close to the end is a kind of freedom. Good time to reflect." 
@@ -346,7 +326,7 @@ Location:Kansas City
   </blockquote>
 </section>
 
-<section style="background-color: #111;"> 
+<section> 
   <h2 style="color: #00FF00;">📰 Latest Call of Duty News & Updates</h2>
   
   <ul style="list-style-type: '⚡ ';">
@@ -368,15 +348,6 @@ Location:Kansas City
   </ul>
 </section>
 
-<section> 
-<h2 style="color: #00FF00;">🖼️ A Look at Call of Duty Through the Years</h2>
-<div class="game-image-gallery">
-    
-    <img src="https://github.com/rigbyjacob41-debug/WebBit1.0/blob/main/cod-blops1.jpg?raw=true" alt="Call of Duty Collage Wallpaper">
-    
-</div>
-</section>
-
 <section>
   <h2 style="color: #00FF00;">🎯 Competitive Goals: Road to Iridescent Rank</h2>
   <div class="progress-bar-container">
@@ -386,8 +357,7 @@ Location:Kansas City
   </div>
 </section>
 
----
-
+<hr style="border-color: red;"> 
 <div class="media-flex-container">
 
     <div class="media-item">
